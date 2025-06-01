@@ -39,14 +39,16 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     }
 
     /**
-     * Update the given verified user's profile information.
+     * Actualiza el usuario verificado con la nueva información y reinicia la verificación de email.
      *
-     * @param  array<string, string>  $input
+     * @param  \App\Models\User  $user
+     * @param  array<string, mixed>  $input
      */
     protected function updateVerifiedUser(User $user, array $input): void
     {
         $user->forceFill([
             'name' => $input['name'],
+            
             'email' => $input['email'],
             'email_verified_at' => null,
         ])->save();
