@@ -1,13 +1,17 @@
-<x-guest-layout>
-    <div class="pt-4 bg-gray-100">
-        <div class="min-h-screen flex flex-col items-center pt-6 sm:pt-0">
-            <div>
-                <x-authentication-card-logo />
-            </div>
-
-            <div class="w-full sm:max-w-2xl mt-6 p-6 bg-white shadow-md overflow-hidden sm:rounded-lg prose">
-                {!! $policy !!}
-            </div>
+<!--Here is the code for a Footer with Social Icons-->
+<!--begin copy & paste-->
+<footer class="bg-dark text-light py-4">
+    <div class="container text-center">
+        <div class="mb-3">
+            <a href="#" class="text-light me-2"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-light me-2"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-light me-2"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-light me-2"><i class="bi bi-linkedin"></i></a>
         </div>
+        <p>&copy; <?php echo date("Y"); ?> Your Company. All rights reserved.</p>
     </div>
-</x-guest-layout>
+</footer>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+<!--end copy & paste-->
