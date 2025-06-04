@@ -1,4 +1,3 @@
-<!-- Componente encapsulado em um único div -->
 <!DOCTYPE html>
 <html lang="en">
 

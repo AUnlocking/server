@@ -1,323 +1,273 @@
 <!DOCTYPE html>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<html lang="pt-br">
+<html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport responsivo -->
-    <title>BR Server</title>
-    
-    <!-- Incluir Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Incluir Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Incluir Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!-- Incluir Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa; /* Cor de fundo suave */
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Garante que o conteúdo ocupe toda a altura da viewport */
-        }
-        header {
-            background-color: #343a40; /* Cor de fundo do cabeçalho */
-            color: #ffffff; /* Cor do texto no cabeçalho */
-            padding: 15px 0;
-            border-bottom: 1px solid #dee2e6; /* Adiciona uma borda suave na parte inferior do cabeçalho */
-        }
-        .carousel {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        .carousel-track img {
-            width: 100%; /* Ajusta a largura para ocupar 100% do container */
-            height: auto; /* Altura ajustada automaticamente para manter a proporção */
-        }
-        .navbar {
-            justify-content: space-between; /* Alinha os itens do navbar */
-        }
-        .navbar-brand {
-            margin-right: auto; /* Empurra a marca para a esquerda */
-        }
-        .buttons .btn {
-            background-color: #007bff; /* Cor de fundo azul para botões */
-            border-color: #007bff; /* Cor da borda azul */
-            color: #ffffff; /* Cor do texto dos botões */
-        }
-        .buttons .btn:hover {
-            background-color: #0056b3; /* Cor de fundo azul mais escura ao passar o mouse */
-            border-color: #0056b3; /* Cor da borda azul mais escura ao passar o mouse */
-        }
-        .social-icons {
-            text-align: center;
-            margin-top: auto; /* Faz com que os ícones fiquem no final da página */
-            margin-bottom: 20px; /* Espaçamento para o rodapé */
-        }
-        .social-icons a {
-            display: inline-block;
-            margin: 0 10px;
-            color: #343a40;
-            font-size: 24px;
-        }
-        .social-icons a:hover {
-            opacity: 0.8;
-        }
-        .message-container {
-            text-align: center;
-            margin-top: 50px;
-            margin-bottom: 20px; /* Espaçamento para o rodapé */
-        }
-        .message {
-            background-color: #ffffff;
-            border: 1px solid #dee2e6;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            height: 100%; /* Garante que todos os containers de mensagem tenham a mesma altura */
-        }
-        footer {
-            background-color: #343a40; /* Cor de fundo do rodapé */
-            color: #ffffff; /* Cor do texto no rodapé */
-            padding: 10px 0;
-            text-align: center;
-            width: 100%;
-            border-top: 1px solid #dee2e6; /* Adiciona uma borda suave na parte superior do rodapé */
-        }
-        .footer-icons {
-            margin-top: 20px; /* Espaçamento para os ícones */
-            margin-bottom: 20px; /* Espaçamento para o rodapé */
-        }
-        .modal-content {
-            background-color: #343a40; /* Fundo escuro */
-            color: #ffffff; /* Texto branco */
-            border-radius: 10px; /* Borda arredondada */
-        }
-        .modal-header {
-            border-bottom: 1px solid #454d55; /* Bordas mais escuras */
-        }
-        .modal-footer {
-            border-top: 1px solid #454d55; /* Bordas mais escuras */
-        }
-        .modal-body {
-            padding: 30px; /* Espaçamento interno */
-        }
-        .modal-title {
-            color: #ffffff; /* Texto branco */
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
 
-        .modal-dialog {
-            margin-top: 100px; /* Ajuste a margem superior para centralizar verticalmente */
-        }
-    </style>
-<body>
-    
-<div>
- 
-    <!-- Top Bar -->
-    <div class="bg-gray-700 text-sm py-1">
-        <div class="max-w-7xl mx-auto px-4 sm:px-4 lg:px-2">
-            <div class="flex justify-between items-center">
-                <div>
-                    <span>💻 <a href="mailto:contato@brserver.tech" class="underline text-blue-400 hover:text-blue-600">contato@brserver.tech</a></span>
+<body class="bg-gray-50">
+    @include('navbar') <!-- Aquí se incluye el navbar -->
+    <!-- Main Header -->
+
+    <!-- Carousel -->
+    <div id="carousel" class="relative w-full bg-gray-200 h-64 md:h-96 overflow-hidden">
+        <div class="flex transition-transform duration-500 ease-in-out h-full" id="carousel-inner">
+            <div class="w-full flex-shrink-0 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+                <div class="text-center text-white">
+                    <h2 class="text-3xl font-bold mb-4">Slide 1</h2>
+                    <p class="text-xl">Welcome to ExclusiveUnlock</p>
                 </div>
-                <div>
-                    <span> 📲 <a href="https://wa.me/5534999442627" class="underline text-blue-400 hover:text-blue-600">+55(34)999442627</a></span>
+            </div>
+            <div class="w-full flex-shrink-0 bg-gradient-to-r from-green-500 to-teal-600 flex items-center justify-center">
+                <div class="text-center text-white">
+                    <h2 class="text-3xl font-bold mb-4">Slide 2</h2>
+                    <p class="text-xl">Professional Services</p>
+                </div>
+            </div>
+            <div class="w-full flex-shrink-0 bg-gradient-to-r from-red-500 to-pink-600 flex items-center justify-center">
+                <div class="text-center text-white">
+                    <h2 class="text-3xl font-bold mb-4">Slide 3</h2>
+                    <p class="text-xl">24/7 Support</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel indicators -->
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            <button onclick="goToSlide(0)" class="w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75 transition-all carousel-indicator active"></button>
+            <button onclick="goToSlide(1)" class="w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75 transition-all carousel-indicator"></button>
+            <button onclick="goToSlide(2)" class="w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75 transition-all carousel-indicator"></button>
+        </div>
+
+        <!-- Carousel controls -->
+        <button onclick="previousSlide()" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-40 text-white p-2 rounded-full transition-all">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button onclick="nextSlide()" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-40 text-white p-2 rounded-full transition-all">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+    <!-- Login Modal -->
+
+    <div id="authentication-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <div class="relative p-4 w-full max-w-md max-h-full">
+            <div class="relative bg-white rounded-lg shadow-lg">
+                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                    <h3 class="text-xl font-semibold text-gray-900">Sign in to our platform</h3>
+                    <button type="button" onclick="toggleModal('authentication-modal')" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 flex justify-center items-center">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="p-4 md:p-5">
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+                        <div class="mb-4">
+                            <label for="email" class="block text-sm font-medium text-gray-700">{{ __('Email') }}</label>
+                            <input id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus class="block mt-1 w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm @error('email') is-invalid @enderror">
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="password" class="block text-sm font-medium text-gray-700">{{ __('Password') }}</label>
+                            <input id="password" type="password" name="password" required autocomplete="current-password" class="block mt-1 w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm @error('password') is-invalid @enderror">
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-4 flex items-center justify-between">
+                            <div class="flex items-center">
+                                <input class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                <label for="remember" class="ml-2 block text-sm text-gray-900">
+                                    {{ __('Remember me') }}
+                                </label>
+                            </div>
+
+                            @if (Route::has('password.request'))
+                            <a class="text-sm text-indigo-600 hover:text-indigo-900" href="{{ route('password.request') }}">
+                                {{ __('Forgot your password?') }}
+                            </a>
+                            @endif
+                        </div>
+
+                        <div class="flex items-center justify-end">
+                            <button type="submit" class="inline-block bg-indigo-500 text-white px-4 py-2 rounded-md text-sm hover:bg-indigo-600">{{ __('Login') }}</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand flex items-center justify-center" href="#">
-    <img src="logo3.jpg" class="block h-16 w-auto" alt="Your Logo">
-</a>
-
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                          <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        @if (Route::has('register'))
-                            <a class="nav-link" href="{{ route('register') }}">Registrar</a>
-                        @endif
-                    </li>
-                </ul>
+    <!-- Content Cards -->
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Card 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+                <i class="fas fa-life-ring text-4xl text-blue-600 mb-4"></i>
+                <h2 class="text-xl font-semibold mb-2">24 Hours Support</h2>
+                <p class="text-gray-600 text-sm">
+                    Support 24 hours / 7 days-a-week. ExclusiveUnlock operates a 24 hour/7 day-a-week email & remote support
+                    services that is staffed to handle any issue or question for the systems that we develop or support.
+                </p>
             </div>
-        </div>
-    </nav>
-</header>
 
-<!-- Carrossel de Imagens -->
-<div id="carouselExample" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="image/imagem1.png" class="d-block w-100" alt="Imagem 1">
-        </div>
-        <div class="carousel-item">
-            <img src="image/imagem2.png" class="d-block w-100" alt="Imagem 2">
-        </div>
-        <div class="carousel-item">
-            <img src="image/imagem3.png" class="d-block w-100" alt="Imagem 3">
-        </div>
-        <!-- Adicione mais itens conforme necessário -->
-    </div>
-    <!-- Controles de navegação -->
-    <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
-    
-
-
-<!-- Redes Sociais -->
-<div id="redes-sociais" class="social-icons">
-    <a href="#" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-whatsapp"></i></a>
-    <a href="#" target="_blank" class="animate__animated animate__bounceIn animate__delay-1s"><i class="fab fa-instagram"></i></a>
-    <a href="#" target="_blank" class="animate__animated animate__bounceIn animate__delay-2s"><i class="fab fa-telegram"></i></a>
-    <!-- Adicione mais ícones conforme necessário -->
-</div>
-
-<!-- Containers de Mensagens -->
-<div id="mensagens" class="message-container">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="message animate__animated animate__fadeInLeft">
-                    <h3>AUTO API</h3>
-                    <p>🌟 Bem-vindo! 🌟
-
-Olá! Estamos aqui para oferecer serviços incríveis com API automática 24 horas por dia! 🕒✨
-
-Na nossa plataforma, você encontra tudo o que precisa de forma rápida e eficiente, com integração contínua e suporte ininterrupto. 🚀💻
-
-Estamos prontos para transformar suas operações com tecnologia avançada e confiável. Não perca tempo, venha descobrir como podemos facilitar o seu dia a dia! 🌐🔧
-
-Conte conosco para soluções que fazem a diferença! 💡💼
-
-</p>
-                </div>
+            <!-- Card 2 -->
+            <div class="bg-blue-50 p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+                <i class="fas fa-tags text-4xl text-blue-600 mb-4"></i>
+                <h2 class="text-xl font-semibold mb-2">Attractive Prices</h2>
+                <p class="text-gray-600 text-sm">
+                    If you find a cheaper price from our competitors but you still want to use ExclusiveUnlock services, please
+                    feel free to contact us. All our advertised prices can be negotiated.
+                </p>
             </div>
-            <div class="col-md-4">
-                <div class="message animate__animated animate__fadeInUp">
-                    <h3>🌟 Suporte Rápido 24 Horas Por Dia 🌟</h3>
-                    <p>Precisa de ajuda imediata? Estamos aqui para você! 🕒💬
 
-Nosso suporte funciona 24 horas por dia, todos os dias da semana, para resolver suas dúvidas e problemas com agilidade e eficiência. 🚀🔧
-
-Não importa a hora ou o dia, nossa equipe está pronta para garantir que você receba a assistência que merece, sempre com um atendimento ágil e personalizado. 💼🌐
-
-Conte conosco para manter suas operações funcionando sem interrupções! 💪🔍</div>
+            <!-- Card 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+                <i class="fas fa-info text-4xl text-blue-600 mb-4"></i>
+                <h2 class="text-xl font-semibold mb-2">Simple Instruction</h2>
+                <p class="text-gray-600 text-sm">
+                    Our instructions are easy to follow and only require that you can enter the unlocking code using your keypad.
+                    If you can dial a telephone number, then you can enter the code!
+                </p>
             </div>
-            <div class="col-md-4">
-                <div class="message animate__animated animate__fadeInRight">
-                    <h3>🌟 Melhores Preços Para Revendedores 🌟</h3>
-                    <p>Atenção, revendedores! Temos ofertas especiais esperando por você! 💼💲
 
-Na nossa plataforma, garantimos os melhores preços para revendedores que buscam qualidade e economia. 🛍️💰
+            <!-- Card 4 -->
+            <div class="bg-blue-50 p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+                <i class="fas fa-lock text-4xl text-blue-600 mb-4"></i>
+                <h2 class="text-xl font-semibold mb-2">Absolutely Safe</h2>
+                <p class="text-gray-600 text-sm">
+                    Completely safe, with no risk to your phone or hardware. No software downloads are required. Alongside
+                    unlocking, your money is completely secure as well.
+                </p>
+            </div>
 
-Oferecemos condições exclusivas e descontos competitivos para que você possa maximizar seus lucros e satisfazer seus clientes. 🚀✨
+            <!-- Card 5 -->
+            <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+                <i class="fas fa-dollar-sign text-4xl text-blue-600 mb-4"></i>
+                <h2 class="text-xl font-semibold mb-2">Money Back Guarantee</h2>
+                <p class="text-gray-600 text-sm">
+                    All of the services on our website are covered by our 100% Money Back Guarantee. We provide such a guarantee
+                    to give honest customers the reassurance that the unlocking service they are ordering will be delivered.
+                </p>
+            </div>
 
-Não perca essa oportunidade de fazer negócio conosco! Entre em contato hoje mesmo e descubra como podemos ajudar o seu negócio a crescer! 📈🌐</div>
+            <!-- Card 6 -->
+            <div class="bg-blue-50 p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+                <i class="fas fa-envelope text-4xl text-blue-600 mb-4"></i>
+                <h2 class="text-xl font-semibold mb-2">Expeditious Delivery</h2>
+                <p class="text-gray-600 text-sm">
+                    All unlock codes and confirmations are sent by email to the address provided on the order form. We ensure fast
+                    delivery of codes. If delayed, we inform our clients/resellers by email.
+                </p>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Footer -->
-<footer id="footer">
-    <!-- Footer Icons -->
-    <div class="footer-icons">
-        <a href="#" class="animate__animated animate__bounceIn"><i class="fab fa-facebook"></i></a>
-        <a href="#" class="animate__animated animate__bounceIn animate__delay-1s"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="animate__animated animate__bounceIn animate__delay-2s"><i class="fab fa-linkedin"></i></a>
-        <!-- Adicione mais ícones conforme necessário -->
-    </div>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <img src="logo3.jpg" class="block h-9 w-auto" alt="Your Logo">
-            </div>
-            <div class="col-md-4">
-                <div class="footer-subscribe">
-                    <h4>Nos siga </h4>
-                    <p>fique por dentro das atualizacoes</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="footer-connect">
-                    <h4>contatos</h4>
-                    <a href="" target="_blank"><i class="fab fa-telegram"></i></a>
-                    <a href="" target="_blank"><i class="far fa-envelope"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+    @include('footer') <!-- Aquí se incluye el navbar -->
 
-<!-- Incluir Bootstrap JS e dependências -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const drawer = document.getElementById('drawer-navigation');
+            const overlay = document.getElementById('mobile-overlay');
 
-<!-- Script para o Carrossel -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const carousel = document.querySelector('.carousel-inner');
-        const slides = document.querySelectorAll('.carousel-item');
-        const totalSlides = slides.length;
-        let slideIndex = 0;
+            if (drawer.classList.contains('-translate-x-full')) {
+                drawer.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+            } else {
+                drawer.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+            }
+        }
 
-        function showSlide(n) {
-            slides.forEach((slide) => {
-                slide.classList.remove('active');
+        // Modal toggle
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.toggle('hidden');
+        }
+
+        // Submenu toggle
+        function toggleSubmenu(submenuId) {
+            const submenu = document.getElementById(submenuId);
+            submenu.classList.toggle('hidden');
+        }
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const totalSlides = 3;
+
+        function updateCarousel() {
+            const carousel = document.getElementById('carousel-inner');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            indicators.forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.classList.add('active', 'bg-opacity-100');
+                    indicator.classList.remove('bg-opacity-50');
+                } else {
+                    indicator.classList.remove('active', 'bg-opacity-100');
+                    indicator.classList.add('bg-opacity-50');
+                }
             });
-            slides[n].classList.add('active');
         }
 
         function nextSlide() {
-            slideIndex = (slideIndex + 1) % totalSlides;
-            showSlide(slideIndex);
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
         }
 
-        function prevSlide() {
-            slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
-            showSlide(slideIndex);
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
         }
 
-        document.querySelector('.carousel-control-prev').addEventListener('click', () => {
-            prevSlide();
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+
+        // Auto-advance carousel
+        setInterval(nextSlide, 5000);
+
+        // Search functionality
+
+        // Search functionality
+        function searchItems(query) {
+            const searchResults = document.getElementById('searchResults');
+            if (query.length > 2) {
+                // Simulate search results
+                searchResults.innerHTML = `
+                <li class="p-2 hover:bg-gray-100 cursor-pointer">Result 1 for "${query}"</li>
+                <li class="p-2 hover:bg-gray-100 cursor-pointer">Result 2 for "${query}"</li>
+                <li class="p-2 hover:bg-gray-100 cursor-pointer">Result 3 for "${query}"</li>
+                `;
+            } else {
+                searchResults.innerHTML = '';
+            }
+        }
+
+        document.getElementById('searchInput')?.addEventListener('keyup', function(e) {
+            searchItems(e.target.value);
         });
 
-        document.querySelector('.carousel-control-next').addEventListener('click', () => {
-            nextSlide();
-        });
+        // Currency change function
+        function setCurrencyTo(currencyId) {
+            console.log('Currency changed to:', currencyId);
+            // Implement currency change logic here
+        }
+    </script>
 
-        setInterval(nextSlide, 3000); // Intervalo de 3 segundos para trocar automaticamente os slides
-    });
-</script>
-
-</body>
-@include('auth.login2')
-</html>
+    </body">
+    </html">
